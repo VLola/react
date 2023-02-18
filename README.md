@@ -6,11 +6,11 @@
 
 ## Main:
 
-![Image text](https://raw.githubusercontent.com/VLola/html/master/Project_105/public/main.png)
+![Image text](https://raw.githubusercontent.com/VLola/react/master/Project_105/public/main.png)
 
 ## Symbol detail:
 
-![Image text](https://raw.githubusercontent.com/VLola/html/master/Project_105/public/symbol.png)
+![Image text](https://raw.githubusercontent.com/VLola/react/master/Project_105/public/symbol.png)
 
 ___
 
@@ -24,6 +24,6 @@ ___
 
 # Project 103.
 
-![Image text](https://raw.githubusercontent.com/VLola/html/master/Project_103/public/images/main.png)
+![Image text](https://raw.githubusercontent.com/VLola/react/master/Project_103/public/images/main.png)
 
 ___
