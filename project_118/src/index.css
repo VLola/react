@@ -1,0 +1,31 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.text-animate {
+  background: url(../public/code.jpg);
+  background-size: 200%;
+  background-position: 80% 100%;
+  background-clip: text;
+  color: hsla(0, 0%, 0%, 0.08);
+  animation: zoomout 10s ease 500ms forwards;
+  font-size: 2vw!important;
+  font-weight: 900;
+}
+
+@keyframes zoomout {
+  from {
+    background-size: 200%;
+    background-position: 80% 100%;
+  }
+  to {
+    background-size: 150%;
+    background-position: 30% 100%;
+  }
+}
