@@ -1,6 +1,9 @@
 npm install react-router-dom --save
 npm install bootstrap 
 npm install jquery popper.js
+npm install @mui/material
+npm install @emotion/react 
+npm install @emotion/styled
 
 added to index.js:
 

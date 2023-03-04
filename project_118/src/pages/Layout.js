@@ -14,6 +14,9 @@ const Layout = () => {
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
+                    <a class="nav-link text-color" href="/skills">Skills</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link text-color" href="/blogs">Blogs</a>
                   </li>
                   <li class="nav-item">
