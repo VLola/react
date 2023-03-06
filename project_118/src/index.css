@@ -21,6 +21,14 @@ code {
   color:white;
 }
 
+.text-gray{
+  color: gray;
+}
+
+.mw-70{
+  max-width: 70%;
+}
+
 .text-animate {
   font-size: 3vw!important;
   font-weight: bold!important;
