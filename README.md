@@ -22,7 +22,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 ## Main:
 
-![Image text](https://raw.githubusercontent.com/VLola/react/master/Project_121/public/main.png)
+![Image text](https://raw.githubusercontent.com/VLola/react/master/project_121/public/main.png)
 
 ___
 
