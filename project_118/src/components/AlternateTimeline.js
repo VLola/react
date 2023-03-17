@@ -30,7 +30,7 @@ class AlternateTimeline extends Component {
               
               <TimelineContent>
               {index % 2 === 0 ? 
-                <div className='d-inline-flex text-color border rounded bg-gradient p-1'>
+                <div className='d-inline-flex text-color border rounded bg-gradient p-1 mw-60'>
                   <div className='mx-3'>
                     <div className='text-nowrap'>
                       {step.label}
@@ -48,7 +48,7 @@ class AlternateTimeline extends Component {
                   </div>
                 </div>
                 :
-                <div className='d-inline-flex text-color border rounded bg-gradient p-1 mw-70'>
+                <div className='d-inline-flex text-color border rounded bg-gradient p-1 mw-60'>
                   <div className='d-inline-flex flex-wrap flex-row-reverse'>
                     {step.technologies.map((technology) => (
                       <div className='bg-dark opacity-50 rounded p-1 m-2'>

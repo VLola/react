@@ -5,7 +5,7 @@ const steps = [
     {
       label: 'C++',
       description: `27 projects`,
-      technologies: [],
+      technologies: ['WinAPI'],
     },
     {
       label: 'C# .Net console',
@@ -20,12 +20,12 @@ const steps = [
     {
       label: 'C# .Net WPF',
       description: '34 projects',
-      technologies: ['MVVM', 'MS SQL', 'Entity Framework', 'EntityFrameworkCore', 'Azure.Storage', 'Binance.Net', 'ScottPlot'],
+      technologies: ['MVVM', 'Entity Framework', 'EntityFrameworkCore', 'Azure.Storage', 'Binance.Net', 'ScottPlot'],
     },
     {
       label: 'C# ASP.NET Core',
       description: '10 projects',
-      technologies: ['MS SQL', 'Entity Framework Core'],
+      technologies: ['Entity Framework Core'],
     },
     {
       label: 'HTML',
@@ -35,7 +35,7 @@ const steps = [
     {
       label: 'JavaScript',
       description: '22 projects',
-      technologies: ['jQuery'],
+      technologies: ['jQuery', 'Ajax'],
     },
     {
       label: 'React',

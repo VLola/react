@@ -28,6 +28,9 @@ code {
 .mw-70{
   max-width: 70%;
 }
+.mw-60{
+  max-width: 60%;
+}
 
 .text-animate {
   font-size: 3vw!important;
