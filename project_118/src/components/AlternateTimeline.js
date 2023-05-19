@@ -1,75 +1,64 @@
 
 import React, { Component } from 'react';
 import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
+import Line from "./Line";
+import { timelineItemClasses } from '@mui/lab/TimelineItem';
+
+function sleep() {
+  return new Promise(resolve => setTimeout(resolve, 200));
+}
 
 class AlternateTimeline extends Component {
   constructor(props) {
     super(props);
-    this.state = { steps: props.steps};
+    this.state = { steps: props.steps, array: [], width: window.innerWidth };
+    this.resize = this.resize.bind(this);
+  }
+
+  componentDidMount() {
+    this.renderData();
+  }
+
+  async resize(){
+    this.setState({width: window.innerWidth});
   }
   
   render() {
-    return (
-      <Timeline position="alternate">
-          {this.state.steps.map((step, index) => (
-            <TimelineItem key={step.label}>
-              {index === this.state.steps.length - 1 ? 
-              <TimelineSeparator>
-                  <TimelineDot />
-              </TimelineSeparator> 
-              : 
-              <TimelineSeparator>
-                  <TimelineDot />
-                  <TimelineConnector />
-              </TimelineSeparator>}
-              
-              <TimelineContent>
-              {index % 2 === 0 ? 
-                <div className='d-inline-flex text-color border rounded bg-gradient p-1 mw-60'>
-                  <div className='mx-3'>
-                    <div className='text-nowrap'>
-                      {step.label}
-                    </div>
-                    <div className='text-gray'>
-                      {step.description}
-                    </div>
-                  </div>
-                  <div className='d-inline-flex flex-wrap'>
-                    {step.technologies.map((technology) => (
-                      <div className='bg-dark opacity-50 rounded p-1 m-2'>
-                        {technology}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                :
-                <div className='d-inline-flex text-color border rounded bg-gradient p-1 mw-60'>
-                  <div className='d-inline-flex flex-wrap flex-row-reverse'>
-                    {step.technologies.map((technology) => (
-                      <div className='bg-dark opacity-50 rounded p-1 m-2'>
-                        {technology}
-                      </div>
-                    ))}
-                  </div>
-                  <div className='mx-3'>
-                    <div className='text-nowrap'>
-                      {step.label}
-                    </div>
-                    <div className='text-gray'>
-                      {step.description}
-                    </div>
-                  </div>
-                </div>}
-              </TimelineContent>
-            </TimelineItem>
-          ))}
-      </Timeline>
-    );
+    let width = this.state.width;
+    if(width < 1100){
+      return (
+        <Timeline
+          sx={{
+            [`& .${timelineItemClasses.root}:before`]: {
+              flex: 0,
+              padding: 0,
+            },
+          }}>
+            {this.state.array.map((step, index) => 
+              <Line key={step.label + width} step={step} index={index} isMobil={true}/>
+            )}
+        </Timeline>
+      );
+    }
+    else{
+      return (
+        <Timeline position="alternate">
+            
+            {this.state.array.map((step, index) => 
+              <Line key={step.label + width} step={step} index={index} isMobil={false}/>
+            )}
+        </Timeline>
+      );
+    }
+  }
+  async renderData(){
+    window.addEventListener("resize", this.resize);
+    let array = [];
+    for(let i = 0; i < this.state.steps.length ;i++){
+      await sleep();
+      array.push(this.state.steps[i]);
+      this.setState({array: array});
+    }
   }
 }
 export default AlternateTimeline;

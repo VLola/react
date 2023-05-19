@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: #333;
 }
 
 code {
@@ -17,6 +18,12 @@ code {
   margin-left: -100%;
 }
 
+.git:hover{
+  transition: all .5s ease-in-out;
+  box-shadow: -1px -1px 4px 4px white;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+}
+
 .text-color{
   color:white;
 }
@@ -26,36 +33,38 @@ code {
 }
 
 .mw-70{
-  max-width: 70%;
+  max-width: 100%;
 }
 .mw-60{
   max-width: 60%;
 }
+
 
 .text-animate {
   font-size: 3vw!important;
   font-weight: bold!important;
   font-family: monospace;
   letter-spacing: 7px!important;
-  cursor: pointer;
-}
-
-.text-animate {
   padding: 64px;
-  background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+  background: linear-gradient(to right, hsl(0, 0%, 30%) 0%, hsl(0, 0%, 100%) 5%, hsl(0, 0%, 30%) 10%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 3s infinite linear;
+  animation: shine 20s infinite linear;
+}
+
+.language-right:hover{
+  box-shadow: -5px 3px 3px gray;
+}
+
+.language-left:hover{
+  box-shadow: 5px 3px 3px gray;
 }
 
 @keyframes shine {
   0% {
     background-position: 0;
   }
-  60% {
-    background-position: 1200px;
-  }
   100% {
-    background-position: 2000px;
+    background-position: 5000px;
   }
 }
