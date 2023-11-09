@@ -7,23 +7,16 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
-function sleep() {
-  return new Promise(resolve => setTimeout(resolve, 100));
-}
-
 class Line extends Component {
   constructor(props) {
     super(props);
-    this.state = { step: props.step, index: props.index, opacity: 0, isMobil: props.isMobil};
+    this.state = { step: props.step, index: props.index, isMobil: props.isMobil};
   }
   
   
-  componentDidMount() {
-    this.renderData();
-  }
   render() {
     return(
-      <TimelineItem  style={{opacity:this.state.opacity}}>
+      <TimelineItem className='item'>
         <TimelineSeparator>
             {this.state.index === 0?(<TimelineDot className='mt-auto' />):(<><TimelineConnector /><TimelineDot/></>)}
         </TimelineSeparator>
@@ -36,13 +29,6 @@ class Line extends Component {
         </TimelineContent>
       </TimelineItem>
     );
-  }
-  
-  async renderData(){
-    for(let i = 0; i < 10 ;i++){
-      await sleep();
-      this.setState({opacity: this.state.opacity + 0.1});
-    }
   }
   
 }

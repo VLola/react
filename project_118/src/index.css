@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #333;
+  height: 100%;
 }
 
 code {
@@ -13,6 +14,7 @@ code {
   background-image: url(../public/git/github-mark-white.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: right;
   width: 300%;
   text-align: end;
   margin-left: -100%;
@@ -21,7 +23,8 @@ code {
 .git:hover{
   transition: all .5s ease-in-out;
   box-shadow: -1px -1px 4px 4px white;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+  filter: drop-shadow(0px 0px 5px white);
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
 }
 
 .text-color{
@@ -39,17 +42,12 @@ code {
   max-width: 60%;
 }
 
-
 .text-animate {
-  font-size: 3vw!important;
-  font-weight: bold!important;
-  font-family: monospace;
-  letter-spacing: 7px!important;
-  padding: 64px;
-  background: linear-gradient(to right, hsl(0, 0%, 30%) 0%, hsl(0, 0%, 100%) 5%, hsl(0, 0%, 30%) 10%);
+  filter: drop-shadow(0px 0px 3px white);
+  background: linear-gradient(to right, hsl(0, 0%, 50%) 0%, hsl(0, 0%, 100%) 5%, hsl(0, 0%, 50%) 10%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 20s infinite linear;
+  animation: shine 10s infinite linear;
 }
 
 .language-right:hover{
@@ -60,11 +58,26 @@ code {
   box-shadow: 5px 3px 3px gray;
 }
 
+.item{
+  animation: animation-item 1s linear;
+}
+
 @keyframes shine {
   0% {
     background-position: 0;
   }
   100% {
-    background-position: 5000px;
+    background-position: 1500px;
+  }
+}
+
+@keyframes animation-item {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
   }
 }
